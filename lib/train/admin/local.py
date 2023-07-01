@@ -4,6 +4,6 @@ class EnvironmentSettings:
         self.tensorboard_dir = self.workspace_dir  # Directory for tensorboard files
         self.pretrained_networks = self.workspace_dir + '/pretrained_networks'
         self.lasot_dir = '/kaggle/input/LaSOT'
-        self.got10k_dir = '/kaggle/input/GOT10k'
+        self.got10k_dir = '/kaggle/input/got10k/train'
         self.trackingnet_dir = '/kaggle/input/TrackingNet'
         self.coco_dir = '/kaggle/input//COCO'
