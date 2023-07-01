@@ -1,6 +1,6 @@
 import collections
 import importlib
-
+from collections.abc import Mapping
 import torch
 import torch.utils.data.dataloader
 # from torch._six import string_classes
