@@ -18,10 +18,10 @@ DATA:
     SCALE_JITTER: 0
   TRAIN:
     DATASETS_NAME:
-      - LASOT
+      # - LASOT
       - GOT10K_vot_train
-      - COCO17
-      - TRACKINGNET
+      # - COCO17
+      # - TRACKINGNET
     DATASETS_RATIO:
       - 1
       - 1

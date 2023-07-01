@@ -29,8 +29,7 @@ def names2datasets(name_list: list, settings, image_loader):
     assert isinstance(name_list, list)
     datasets = []
     for name in name_list:
-        # assert name in ['GOT10K_train', 'GOT10K_vot_train', 'LASOT', 'COCO17', 'TRACKINGNET']
-        assert name in ['GOT10K_train']
+        assert name in ['GOT10K_train', 'GOT10K_vot_train', 'LASOT', 'COCO17', 'TRACKINGNET']
         if name == 'LASOT':
             datasets.append(Lasot(settings.env.lasot_dir, split='train', image_loader=image_loader))
         elif name == 'GOT10K_train':
