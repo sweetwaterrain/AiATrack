@@ -24,9 +24,9 @@ DATA:
       # - TRACKINGNET
     DATASETS_RATIO:
       - 1
-      - 1
-      - 1
-      - 1
+      # - 1
+      # - 1
+      # - 1
     SAMPLE_PER_EPOCH: 60000
 MODEL:
   BACKBONE:
@@ -66,7 +66,7 @@ TRAIN:
   GRAD_CLIP_NORM: 0.1
   LR: 0.0001
   LR_DROP_EPOCH: 400
-  NUM_WORKER: 16
+  NUM_WORKER: 1
   OPTIMIZER: ADAMW
   PRINT_INTERVAL: 50
   SCHEDULER:
