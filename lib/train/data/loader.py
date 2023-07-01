@@ -116,7 +116,7 @@ def ltr_collate_stack1(batch):
     elif isinstance(batch[0], TensorList):
         transposed = zip(*batch)
         return TensorList([ltr_collate_stack1(samples) for samples in transposed])
-    elif isinstance(batch[0], collections.Sequence):
+    elif isinstance(batch[0], collections.abc.Sequence):
         transposed = zip(*batch)
         return [ltr_collate_stack1(samples) for samples in transposed]
     elif batch[0] is None:
