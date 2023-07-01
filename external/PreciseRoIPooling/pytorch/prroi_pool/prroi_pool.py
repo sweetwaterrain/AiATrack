@@ -29,3 +29,4 @@ class PrRoIPool2D(nn.Module):
 
     def extra_repr(self):
         return 'kernel_size=({pooled_height}, {pooled_width}), spatial_scale={spatial_scale}'.format(**self.__dict__)
+

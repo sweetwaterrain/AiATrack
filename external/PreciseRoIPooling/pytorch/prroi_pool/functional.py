@@ -9,9 +9,11 @@
 # Distributed under terms of the MIT license.
 # Copyright (c) 2017 Megvii Technology Limited.
 
+import torch
 import torch.autograd as ag
 
 __all__ = ['prroi_pool2d']
+
 
 _prroi_pooling = None
 
@@ -42,8 +44,7 @@ class PrRoIPool2DFunction(ag.Function):
         _prroi_pooling = _import_prroi_pooling()
 
         assert 'FloatTensor' in features.type() and 'FloatTensor' in rois.type(), \
-            'Precise RoI Pooling only takes float input, got {} for features and {} for rois.'.format(features.type(),
-                                                                                                      rois.type())
+                'Precise RoI Pooling only takes float input, got {} for features and {} for rois.'.format(features.type(), rois.type())
 
         pooled_height = int(pooled_height)
         pooled_width = int(pooled_width)
@@ -75,10 +76,10 @@ class PrRoIPool2DFunction(ag.Function):
             grad_input = _prroi_pooling.prroi_pooling_backward_cuda(features, rois, output, grad_output, *ctx.params)
         if rois.requires_grad:
             grad_output = grad_output.contiguous()
-            grad_coor = _prroi_pooling.prroi_pooling_coor_backward_cuda(features, rois, output, grad_output,
-                                                                        *ctx.params)
+            grad_coor = _prroi_pooling.prroi_pooling_coor_backward_cuda(features, rois, output, grad_output, *ctx.params)
 
         return grad_input, grad_coor, None, None, None
 
 
 prroi_pool2d = PrRoIPool2DFunction.apply
+

@@ -9,8 +9,11 @@
 import unittest
 
 import torch
+import torch.nn as nn
 import torch.nn.functional as F
+
 from jactorch.utils.unittest import TorchTestCase
+
 from prroi_pool import PrRoIPool2D
 
 
