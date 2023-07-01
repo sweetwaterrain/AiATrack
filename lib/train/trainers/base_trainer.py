@@ -88,7 +88,8 @@ class BaseTrainer:
                     self.epoch = epoch
 
                     self.train_epoch()
-
+                    print('epoch %d finished' % epoch)
+                    
                     if self.lr_scheduler is not None:
                         if self.settings.scheduler_type != 'cosine':
                             self.lr_scheduler.step()
