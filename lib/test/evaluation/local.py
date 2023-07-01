@@ -12,7 +12,7 @@ def local_env_settings():
     settings.lasot_path = 'PATH/LaSOT'
     settings.network_path = 'PATH/AiATrack/test/networks'  # Where tracking networks are stored
     settings.nfs_path = 'PATH/NFS30'
-    settings.otb_path = 'PATH/OTB100'
+    settings.otb_path = '/kaggle/input/otb2015'
     settings.prj_dir = 'PATH/AiATrack'
     settings.result_plot_path = 'PATH/AiATrack/test/result_plots'
     settings.results_path = 'PATH/AiATrack/test/tracking_results'  # Where to store tracking results
