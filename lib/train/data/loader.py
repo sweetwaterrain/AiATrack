@@ -3,7 +3,10 @@ import importlib
 
 import torch
 import torch.utils.data.dataloader
-from torch._six import string_classes
+# from torch._six import string_classes
+int_classes = int
+string_classes = str
+
 
 from lib.utils import TensorDict, TensorList
 
